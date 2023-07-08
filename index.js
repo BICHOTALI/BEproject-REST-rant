@@ -1,7 +1,10 @@
 const express = require('express')
 require('dotenv').config()
+const placesController = require('./controllers/places')
 
 const app = express()
+
+app.use('/places', placesController)
 
 app.get('/', (req, res) => {
     res.send('wassup')
