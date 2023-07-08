@@ -4,10 +4,14 @@ const placesController = require('./controllers/places')
 
 const app = express()
 
+//Middleware
+app.set('view engine', 'jsx')
+app.engine('jsx', require('express-react-views').createEngine())
+
 app.use('/places', placesController)
 
 app.get('/', (req, res) => {
-    res.send('Homepage')
+    res.render('home')
 })
 
 app.get('*', (req, res) => {
