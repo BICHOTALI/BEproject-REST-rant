@@ -7,7 +7,7 @@ const app = express()
 app.use('/places', placesController)
 
 app.get('/', (req, res) => {
-    res.send('wassup')
+    res.send('Homepage')
 })
 
 app.get('*', (req, res) => {
