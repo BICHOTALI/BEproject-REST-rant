@@ -1,13 +1,17 @@
+// Modules and Globals
 const express = require('express')
 require('dotenv').config()
 const placesController = require('./controllers/places')
 
 const app = express()
 
-//Middleware
+// Middleware (express settings)
+app.set('views', __dirname + '/views')
 app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())
+app.use(express.static('public'))
 
+// Controllers & Routes
 app.use('/places', placesController)
 
 app.get('/', (req, res) => {
