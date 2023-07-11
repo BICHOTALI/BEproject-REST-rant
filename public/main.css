@@ -1,13 +1,22 @@
 body {
     background-color: #2f1938;
+    text-align: center;
 }
 
 h1 {
     text-align: center;
     color: #6495ed;
+    text-shadow: 3px 3px #000000;
+}
+
+h2 {
+    color: #7764ed;
+    text-shadow: 1px 1px #656565;
 }
 
 button {
     background-color: whitesmoke;
+    color: #6495ed;
+    text-shadow: 1px 1px #656565;
 }
   
