@@ -1,6 +1,6 @@
 const router = require('express').Router()
 
-// GET /new
+// GET new places page
 router.get('/new', (req, res) => {
   res.render('places/new')
 })
@@ -25,9 +25,11 @@ router.get('/', (req, res) => {
 })
 
 
-// // POST creates new place
-// router.post('/', (req, res) => {
-//   console.log(req.body)
+// POST creates new place
+router.post('/', (req, res) => {
+  console.log(req.body)
+  res.send('/places')
+})
 //   if (!req.body.pic) {
 //     // Default image if one is not provided
 //     req.body.pic = 'http://placekitten.com/400/400'
@@ -41,10 +43,5 @@ router.get('/', (req, res) => {
 //   places.push(req.body)
 //   res.redirect('/places')
 // })
-
-
-
-
-
 
 module.exports = router
