@@ -6,10 +6,11 @@ const placesController = require('./controllers/places')
 const app = express()
 
 // Middleware (express settings)
+app.use(express.urlencoded({ extended: true }))
+app.use(express.static('public'))
 app.set('views', __dirname + '/views')
 app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())
-app.use(express.static('public'))
 
 // Controllers & Routes
 app.use('/places', placesController)
