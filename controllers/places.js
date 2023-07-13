@@ -1,4 +1,5 @@
 const router = require('express').Router()
+const places = require('../models/places')
 
 // GET new places page
 router.get('/new', (req, res) => {
@@ -7,21 +8,7 @@ router.get('/new', (req, res) => {
 
 // GET /places
 router.get('/', (req, res) => {
-    let places = [{
-        name: 'H-Thai-ML',
-        city: 'Seattle',
-        state: 'WA',
-        cuisines: 'Thai, Pan-Asian',
-        pic: '/images/thai.jpg'
-      }, {
-        name: 'Coding Cat Cafe',
-        city: 'Phoenix',
-        state: 'AZ',
-        cuisines: 'Coffee, Bakery',
-        pic: '/images/cat-cafe.jpg'
-      }]
-
-    res.render('places/index', { places })
+  res.render('places/index', { places })
 })
 
 
