@@ -9,7 +9,7 @@ main {
     margin-left: 20px;
     background-color: white;
     border-radius: 5px;
-    height: 100vh;
+    padding-bottom: 10px;
 }
 
 nav{

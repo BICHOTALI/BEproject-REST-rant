@@ -11,6 +11,19 @@ router.get('/', (req, res) => {
   res.render('places/index', { places })
 })
 
+// GET place details by index 
+router.get('/:id', (req, res) => {
+  const id = Number(req.params.id)
+  if (isNaN(id)) {
+    res.render('error404')
+  } 
+  else if (!places[id]) {
+    res.render('error404')
+  } 
+  else {
+    res.render('places/show', { place: places[id] })
+  }
+})
 
 // POST creates new place
 router.post('/', (req, res) => {
