@@ -1,6 +1,7 @@
 // Modules and Globals
 const express = require('express')
 require('dotenv').config()
+const methodOverride = require('method-override')
 const placesController = require('./controllers/places')
 
 const app = express()
@@ -11,6 +12,7 @@ app.use(express.static('public'))
 app.set('views', __dirname + '/views')
 app.set('view engine', 'jsx')
 app.engine('jsx', require('express-react-views').createEngine())
+app.use(methodOverride('_method'))
 
 // Controllers & Routes
 app.use('/places', placesController)
