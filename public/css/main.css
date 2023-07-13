@@ -4,7 +4,38 @@ body {
     text-align: center;
 }
 
+main {
+    margin-right: 20px;
+    margin-left: 20px;
+    background-color: white;
+    border-radius: 5px;
+    height: 100vh;
+}
+
+nav{
+    background-color: #2f1938;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+nav a {
+    text-decoration: none;
+    color: white;
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+}
+nav li {
+    display: inline;
+    margin-right: 25px;
+    color: #6495ed;
+}
+nav a:hover {
+    color: #6495ed ;
+}
+
 h1 {
+    padding-top: 20px;
     text-align: center;
     color: #6495ed;
     text-shadow: 3px 3px #000000;
