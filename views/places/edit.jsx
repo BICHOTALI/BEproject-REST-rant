@@ -6,7 +6,7 @@ function edit_form (data) {
         <Def>
             <main>
                 <h1>Edit Place</h1>
-                <form method='POST' action={`/place/${data.place.id}?_method=PUT`}>
+                <form method='POST' action={`/places/${data.id}?_method=PUT`}>
                     <div className='form-group'>
                         <label htmlFor='name'>Name</label>
                         <input 
@@ -19,24 +19,24 @@ function edit_form (data) {
                     <div className='form-group'>
                         <label htmlFor="pic">Place Picture URL</label>
                         <input 
-                        className='form-control' 
-                        type="url" 
-                        id="pic" 
-                        name="pic"
-                        defaultValue={data.place.pic}/>
+                            className='form-control' 
+                            ype="url" 
+                            id="pic" 
+                            name="pic"
+                            defaultValue={data.place.pic}/>
                     </div>
                     <div className='form-group'>
                         <label htmlFor="city">City</label>
                         <input 
-                        className='form-control' 
-                        id="city"
-                        name="city"
-                        defaultValue={data.place.city} />
+                            className='form-control' 
+                            id="city"
+                            name="city"
+                            defaultValue={data.place.city} />
                     </div>
                     <div className='form-group'>
                         <label htmlFor="state">State</label>
                         <select name="state" id="state"
-                        defaultValue={data.place.state}>
+                            defaultValue={data.place.state}>
                             <option value="AL">AL</option>
                             <option value="AK">AK</option>
                             <option value="AR">AR</option>
@@ -93,11 +93,11 @@ function edit_form (data) {
                     <div className='form-group'>
                         <label htmlFor="cuisines">Popular Cuisines</label>
                         <input 
-                        className='form-control' 
-                        id="cuisines" 
-                        name="cuisines"
-                        defaultValue={data.place.cuisines} 
-                        required />
+                            className='form-control' 
+                            id="cuisines" 
+                            name="cuisines"
+                            defaultValue={data.place.cuisines} 
+                            required />
                     </div>
                     <input className='btn btn-primary' type="submit" value='Add Place' />
                 </form>

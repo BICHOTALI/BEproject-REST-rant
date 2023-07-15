@@ -7,7 +7,7 @@ function error404 () {
             <main>
                 <h1>404: PAGE NOT FOUND</h1>
                 <p>Oops, sorry, we cant find this page!</p>
-                <img src="/images/404error" alt="404 ERROR" />
+                <img width='50%' src="/images/404error.jpg" alt="404 ERROR" />
                 <div>
                     <a href="https://www.freepik.com/free-vector/error-404-concept-illustration_7741849.htm#page=2&query=404%20funny&position=37&from_view=keyword&track=ais">Image by storyset</a> on Freepik
                 </div>
