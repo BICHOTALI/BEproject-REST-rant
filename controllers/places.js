@@ -76,12 +76,10 @@ router.delete('/:id', (req, res) => {
 })
 
 
-// PROBLEM WITH EdIT ROUTE, AFTER MAKING CHANGES IT GOES TO 404 PAGE
-
 // PUT
 router.put('/:id', (req, res) => {
   const id = Number(req.params.id)
-  console.log(req.body)
+
   if (isNaN(id)) {
       res.render('error404')
   }

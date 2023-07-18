@@ -99,7 +99,7 @@ function edit_form (data) {
                             defaultValue={data.place.cuisines} 
                             required />
                     </div>
-                    <input className='btn btn-primary' type="submit" value='Add Place' />
+                    <input className='btn btn-primary' type="submit" value='Update' />
                 </form>
             </main>
         </Def>

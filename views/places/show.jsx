@@ -13,7 +13,7 @@ function show (data) {
             </div>
             <div>
                 <h2>Description</h2>
-                <p>Located in {data.place.city},{data.place.state} and serves {data.place.cuisines}</p>
+                <p>Located in {data.place.city}, {data.place.state} and serves {data.place.cuisines}</p>
             </div>
             <div>
                 <h2>Comments</h2>
