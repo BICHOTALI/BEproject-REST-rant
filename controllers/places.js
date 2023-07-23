@@ -28,10 +28,11 @@ router.get('/new', (req, res) => {
   res.render('places/new')
 })
 
-// GET place details by id
+// GET place details by id (show.js)
 router.get('/:id', (req, res) => {
-  db.Place.findById(req.params.id)
+  db.Place.findById(req.params.id).populate('comments')
   .then(place => {
+    console.log(place.comments)
     res.render('places/show', { place })
   })
   .catch(err => {

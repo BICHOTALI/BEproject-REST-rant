@@ -13,8 +13,16 @@ async function seed() {
         content: 'Wow, simply amazing! Highly recommended!'
     })
 
+    let comment2 = await db.Comment.create({
+        author: 'Hungry Harry',
+        rant: true,
+        stars: 2.0,
+        content: 'Huge Disappointment!'
+    })
+    
     // Add that comment to the place's comment array.
     place.comments.push(comment.id)
+    place.comments.push(comment2.id)
 
     //save the place now that it has comment
     await place.save()
