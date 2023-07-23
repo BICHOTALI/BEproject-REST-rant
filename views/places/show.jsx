@@ -35,7 +35,7 @@ function show (data) {
                 <p>Not Rated</p>
             </div>
             <div>
-                <h2>Description</h2>
+                <h2>~ Description ~</h2>
                 <h3>
                     {data.place.showEstablished()}
                 </h3>
@@ -43,8 +43,9 @@ function show (data) {
                     Serving {data.place.cuisines}
                 </h4>
             </div>
+            <hr />
             <div>
-                <h2>Comments</h2>
+                <h2>~ Comments ~</h2>
                 <p>{comments}</p>
             </div>
             <a href={`/places/${data.id}/edit`} className="btn btn-warning"> 
