@@ -20,7 +20,7 @@ function edit_form (data) {
                         <label htmlFor="pic">Place Picture URL</label>
                         <input 
                             className='form-control' 
-                            ype="url" 
+                            type="url" 
                             id="pic" 
                             name="pic"
                             defaultValue={data.place.pic}/>

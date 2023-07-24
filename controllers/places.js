@@ -1,5 +1,6 @@
 const router = require('express').Router()
 const db = require('../models')
+const comment = require('../models/comment')
 
 // GET all places index page
 router.get('/', (req, res) => {
@@ -54,7 +55,29 @@ router.get('/:id/edit', (req, res) => {
 })
 
 router.post('/:id/rant', (req, res) => {
-  res.send('GET /places/:id/rant stub')
+  console.log('post comment', req.body)
+    if (req.body.author === '') { req.body.author = undefined }
+    req.body.rant = req.body.rant ? true : false
+    db.Place.findById(req.params.id)
+        .then(place => {
+            db.Comment.create(req.body)
+                .then(comment => {
+                    place.comments.push(comment.id)
+                    place.save()
+                        .then(() => {
+                            res.redirect(`/places/${req.params.id}`)
+                        })
+                        .catch(err => {
+                            res.render('error404', err)
+                        })
+                })
+                .catch(err => {
+                    res.render('error404', err)
+                })
+        })
+        .catch(err => {
+            res.render('error404', err)
+        })
 })
 
 router.delete('/:id/rant/:rantId', (req, res) => {
