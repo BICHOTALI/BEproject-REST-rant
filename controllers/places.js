@@ -14,6 +14,7 @@ router.get('/', (req, res) => {
   })
 })
 
+// POST
 router.post('/', (req, res) => {
   db.Place.create(req.body)
   .then(() => {
@@ -25,6 +26,7 @@ router.post('/', (req, res) => {
   })
 })
 
+// GET add new place page
 router.get('/new', (req, res) => {
   res.render('places/new')
 })
@@ -46,14 +48,30 @@ router.put('/:id', (req, res) => {
   res.send('PUT /places/:id stub')
 })
 
+// DELETE deletes a place
 router.delete('/:id', (req, res) => {
-  res.send('DELETE /places/:id stub')
+  db.Place.findByIdAndDelete(req.params.id)
+  .then(place => {
+    res.redirect('/places')
+  })
+  .catch(err => {
+    console.log('error:', err)
+    res.render('error404')
+  })
 })
 
 router.get('/:id/edit', (req, res) => {
-  res.send('GET edit form stub')
+  db.Place.findById(req.params.id)
+  .then(place => {
+      res.render('places/edit', { place })
+  })
+  .catch(err => {
+      res.render('error404')
+  })
 })
 
+
+// POST posts a comment
 router.post('/:id/rant', (req, res) => {
   console.log('post comment', req.body)
     if (req.body.author === '') { req.body.author = undefined }

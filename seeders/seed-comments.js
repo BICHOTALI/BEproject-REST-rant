@@ -34,4 +34,3 @@ async function seed() {
 seed()
 
 
-//LEFT OF ON PART 3: POPULATE THE COMMENTS -- 
